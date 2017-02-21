@@ -6,7 +6,7 @@ $(function() {
             hours = 60 * 60,
             minutes = 60;
 
-        var EndDate = new Date(2017, 1, 15);
+        var EndDate = new Date(2017, 2, 25);
         var StartDate = new Date();
         // console.log(StartDate);
         // console.log(EndDate);
