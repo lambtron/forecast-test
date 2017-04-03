@@ -1,52 +1,44 @@
-$(function() {
-    calculateTimeLeft();
+var videoContainer = document.querySelector("#video-container");
+var videoElem = document.querySelector("#video-container video");
 
-    function calculateTimeLeft() {
-        var days = 24 * 60 * 60,
-            hours = 60 * 60,
-            minutes = 60;
+var vidWOrig;
+var vidHOrig;
+vidWOrig = videoElem.getAttribute("width");
+vidHOrig = videoElem.getAttribute("height");
 
-        var EndDate = new Date(2017, 3, 15);
-        var StartDate = new Date();
-        // console.log(StartDate);
-        // console.log(EndDate);
+var minW = 320;
 
-        var timeBetweenS = (EndDate.getTime() - StartDate.getTime()) / 1000;
-        // console.log(timeBetweenS);
+function videoCover() {
 
-        // How many days left
-        var timeBetweenDays = Math.floor(timeBetweenS / (days));
-        // How much time after we subtract the days
-        var leftOver = timeBetweenS % days;
-        // How many hours left after days
-        var timeBetweenHours = Math.floor(leftOver / (hours));
-        // How much time after we subtract the hours
-        leftOver = leftOver % hours
+    // Find the current width and height of the viewport
+    var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var winHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
-        var timeBetweenMinutes = Math.floor(leftOver / (minutes));
-        leftOver = leftOver % minutes
-        var timeBetweenSeconds = Math.floor(leftOver);
+    // Resize the video container to match the viewport
+    videoContainer.style.width = winWidth + 'px';
+    videoContainer.style.height = winHeight + 'px';
 
+    // Find the largest scale factor of horizontal/vertical
+    var scaleH = winWidth / vidWOrig;
+    var scaleV = winHeight / vidHOrig;
+    var scale = scaleH > scaleV ? scaleH : scaleV;
 
-        // console.log(timeBetweenDays);
-        // // console.log(leftOver);
-        // console.log(timeBetweenHours);
-        // console.log(timeBetweenMinutes);
-        // console.log(timeBetweenSeconds);
-
-        var timeLeft = {
-            days: timeBetweenDays,
-            hours: timeBetweenHours,
-            minutes: timeBetweenMinutes,
-            seconds: timeBetweenSeconds
-        }
-
-        $(".days .timer").html(timeLeft.days);
-        $(".hours .timer").html(timeLeft.hours);
-        $(".minutes .timer").html(timeLeft.minutes);
-        $(".seconds .timer").html(timeLeft.seconds);
-
-        setTimeout(calculateTimeLeft, 1000);
+    // Don't allow scaled width to be less than min width
+    if (scale * vidWOrig < minW) {
+        scale = minW / vidWOrig;
     }
 
-})
+    // Scale the video
+    var videoNewWidth = scale * vidWOrig;
+    var videoNewHeight = scale * vidHOrig;
+    videoElem.style.width = videoNewWidth + 'px';
+    videoElem.style.height = videoNewHeight + 'px';
+
+    // Align to middle by scrolling within the container
+    videoContainer.scrollLeft = (videoNewWidth - winWidth) / 2;
+    videoContainer.scrollTop = (videoNewHeight - winHeight) / 2;
+};
+
+videoCover();
+
+window.addEventListener("resize", videoCover)
