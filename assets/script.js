@@ -42,3 +42,17 @@ function videoCover() {
 videoCover();
 
 window.addEventListener("resize", videoCover)
+
+
+// Brand quote stuff
+
+var brandMessage = $(".brands .brand-message")
+
+function selectBrandMessage(elem) {
+    var number = $(elem).data("number")
+
+    $(".brands .brand-logo").removeClass("active-brand")
+    $(".brands .brand-message").css("display", "none");
+    $(".brands #message-" + number).css("display", "inline-block");
+    $(elem).addClass("active-brand")
+}

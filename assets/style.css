@@ -14,9 +14,16 @@ html {
     width: 90%;
     height: 100%;
     margin: 0 auto;
+    max-width: 1200px;
 }
 
-.pure-g {
+@media all and (max-width < 768px) {
+    .container {
+        width: 96%
+    }
+}
+
+.portfolio .pure-g {
     margin: 10px 0;
     justify-content: center;
 }
@@ -35,7 +42,10 @@ section {
     position: relative;
 }
 
+/************************************* NAVIGATION ************************************/
+
 .nav {
+    padding: 0 15px;
     position: fixed;
     z-index: 1000;
     top: 0;
@@ -46,12 +56,53 @@ section {
 
 .nav .logo {
     height: 40px;
-    padding: 10px 15px;
+    padding: 10px 0;
+    text-align: left;
 }
 
 .nav .logo img {
     height: 100%;
 }
+
+.nav .nav-menu {
+    text-align: right;
+    height: 33px;
+}
+
+.nav .nav-menu .links {
+    display: none;
+    list-style: none;
+    height: 100%;
+    padding-top: 7px;
+}
+
+.nav .nav-menu .hamburger {
+    width: 30px;
+    padding-top: 10px;
+    display: inline-block;
+}
+
+.nav .nav-menu .hamburger img {
+    width: 100%;
+}
+
+.nav .nav-menu .links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+    
+/* MD size, greater than 1024 */
+@media all and (min-width: 1024px) {
+    .nav .nav-menu .links {
+        display: inline-block;
+    }
+
+    .nav .nav-menu .hamburger {
+        display: none;
+    }
+}
+
+/************************************* HERO HEADER **********************************/
 
 #video-container {
     /*position: absolute;*/
@@ -68,16 +119,18 @@ video {
     height: auto;
 }
 
-.port-block {
+/****************************************** PORTFOLIO *********************************************/
+
+.portfolio .port-block {
     min-height: 300px;
 }
 
-.port-block img {
+.portfolio .port-block img {
     width: 100%;
     height: 100%;
 }
 
-.port-block .port-content {
+.portfolio .port-block .port-content {
     width: 100%;
     height: 100%;
     background-image: url("http://placehold.it/1000x400");
@@ -86,12 +139,12 @@ video {
     background-repeat: no-repeat;
 }
 
-.port-block .port-content:hover .filter {
+.portfolio .port-block .port-content:hover .filter {
     display: inline-block;
     cursor: pointer;
 }
 
-.port-block .port-content .filter{
+.portfolio .port-block .port-content .filter{
     display: none;
     position: relative;
     height: 100%;
@@ -100,11 +153,62 @@ video {
     /*padding-top: 5%;*/
 }
 
-.port-block .port-content .filter .port-text {
+.portfolio .port-block .port-content .filter .port-text {
     width: 80%;
     position: absolute;
     left: 20%;
     top: 20%;
     height: 80%;
     /*background: red;*/
+}
+
+
+/************************************* BRAND LOGOS ***********************************/
+.brands {
+    color: white;
+    background-color: #777;
+}
+
+.brands .brand-logo {
+    opacity: .5;
+}
+
+.brands .brand-logo:hover {
+    cursor: pointer;
+}
+
+.brands .active-brand {
+    opacity: 1;
+}
+
+.brands .brand-logo img {
+    width: 100%;
+}
+
+.brands .brand-message-holder {
+    height: 200px;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.brands .brand-message-holder .brand-message {
+    display: none;
+}
+
+.brands .brand-message-holder #message-1 {
+    display: inline-block;
+}
+
+/************************************ FOOTER ******************************************/
+.footer {
+    height: 200px;
+    padding: 50px 0px;
+}
+
+.footer .footer-content {
+    height: 175px;
+}
+
+.footer .social img {
+    width: 100%;
 }
