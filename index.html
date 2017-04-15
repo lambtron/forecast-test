@@ -12,26 +12,35 @@
     <div class="nav">
         <div class="pure-g">
             <div class="logo pure-u-7-24">
-                <img src="assets/img/logo.png">
+                <a href="index.html"><img src="assets/img/logo.png"></a>
             </div>
             <div class="nav-menu pure-u-16-24">
                 <div class="hamburger">
                     <img src="assets/img/hamburger.png">
                 </div>
                 <ul class="links">
-                    <li>Work</li>
-                    <li>About</li>
-                    <li>Contact</li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
     </div>
     <section>
-        <div id="video-container">
+        <div class="video-container">
             <video poster="assets/img/hero-poster.png" preload="auto" width="1920" height="1080" autoplay loop muted>
+                <source src="assets/videos/hero.webm" type="video/webm">
                 <source src="assets/videos/hero.mp4" type="video/mp4">
             </video>
-        <div>
+            <div>
+    </section>
+    <section>
+        <div class="video-container">
+            <video id="reel" poster="assets/img/hero-poster.png" preload="auto" width="1920" height="1080" autoplay loop muted>
+                <source src="assets/videos/reel.webm" type="video/webm">
+                <source src="assets/videos/reel.mp4" type="video/mp4">
+            </video>
+            <div>
     </section>
     <section class="portfolio">
         <div class="container">
@@ -115,25 +124,23 @@
                     <h3 id="message-3" class="brand-message">Suspendisse porttitor, elit id mollis vestibulum, lectus nulla auctor eros, vitae aliquet lacus tellus sed orci. Maecenas mollis, nunc quis auctor dapibus, dui risus tempus leo, sit amet finibus nunc nisl at neque.</h3>
                     <h3 id="message-4" class="brand-message">Ut vestibulum scelerisque arcu, at consequat orci ullamcorper id. Donec vehicula ex orci, nec efficitur tellus placerat volutpat. Aliquam dignissim ultrices facilisis. Quisque placerat nulla pretium, bibendum augue quis, luctus risus.</h3>
                 </div>
-
             </div>
             <div class="pure-g">
                 <div class="pure-u-6-24">
                     <!--SPACER-->
                 </div>
-                <div class="brand-logo pure-u-3-24 active-brand" id="brand-logo-1" data-number="1" onclick="selectBrandMessage(this)">
+                <div class="brand-logo pure-u-3-24 active-brand" id="logo-reviver" data-number="1" onmouseenter="selectBrandMessage(this)">
+                    <!-- <img src="assets/img/reviver.png"> -->
+                </div>
+                <div class="brand-logo pure-u-3-24" id="logo-breathometer" data-number="2" onmouseenter="selectBrandMessage(this)">
+                    <!-- <img src="assets/img/breathometer.png"> -->
+                </div>
+                <div class="brand-logo pure-u-3-24" id="logo-skully" data-number="3" onmouseenter="selectBrandMessage(this)">
+                    <!-- <img src="assets/img/skully.png"> -->
+                </div>
+                <div class="brand-logo pure-u-3-24" id="brand-logo-4" data-number="4" onmouseenter="selectBrandMessage(this)">
                     <img src="assets/img/epic-logo.png">
                 </div>
-                <div class="brand-logo pure-u-3-24" id="brand-logo-2" data-number="2" onclick="selectBrandMessage(this)">
-                    <img src="assets/img/epic-logo.png">
-                </div>
-                <div class="brand-logo pure-u-3-24" id="brand-logo-3" data-number="3" onclick="selectBrandMessage(this)">
-                    <img src="assets/img/epic-logo.png">
-                </div>
-                <div class="brand-logo pure-u-3-24" id="brand-logo-4" data-number="4" onclick="selectBrandMessage(this)">
-                    <img src="assets/img/epic-logo.png">
-                </div>
-
             </div>
     </section>
     <section class="footer">
@@ -165,6 +172,35 @@
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="assets/script.js"></script>
+    <script type="text/javascript">
+
+    function onVisibilityChange(el, callback) {
+        var old_visible;
+        return function() {
+            var visible = isElementInViewport(el);
+            if (visible != old_visible) {
+                old_visible = visible;
+                if (typeof callback == 'function') {
+                    callback(visible);
+                }
+            }
+        }
+    }
+
+    var handler = onVisibilityChange($("#reel"), function(visible) {
+        var reel = $("#reel")[0];
+        console.log(visible);
+        if (visible)
+            reel.play();
+        else
+            reel.pause();
+        /* your code go here */
+    });
+
+
+    //jQuery
+    $(window).on('DOMContentLoaded load resize scroll', handler);
+    </script>
 </body>
 
 </html>

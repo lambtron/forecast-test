@@ -1,12 +1,47 @@
 var videoContainer = document.querySelector("#video-container");
 var videoElem = document.querySelector("#video-container video");
+if (videoElem) {
+    var vidWOrig;
+    var vidHOrig;
+    vidWOrig = videoElem.getAttribute("width");
+    vidHOrig = videoElem.getAttribute("height");
 
-var vidWOrig;
-var vidHOrig;
-vidWOrig = videoElem.getAttribute("width");
-vidHOrig = videoElem.getAttribute("height");
+    var minW = 320;
 
-var minW = 320;
+    videoCover();
+
+    window.addEventListener("resize", videoCover)
+}
+// Brand quote stuff
+
+var brandMessage = $(".brands .brand-message")
+
+function selectBrandMessage(elem) {
+    var number = $(elem).data("number")
+
+    $(".brands .brand-logo").removeClass("active-brand")
+    $(".brands .brand-message").css("display", "none");
+    $(".brands #message-" + number).css("display", "inline-block");
+    $(elem).addClass("active-brand")
+}
+
+
+function isElementInViewport (el) {
+
+    //special bonus for those using jQuery
+    if (typeof jQuery === "function" && el instanceof jQuery) {
+        el = el[0];
+    }
+
+    var rect = el.getBoundingClientRect();
+
+    return (
+        rect.top >= -400 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight + 400 || document.documentElement.clientHeight + 400) && /*or $(window).height() */
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
+    );
+}
 
 function videoCover() {
 
@@ -38,21 +73,3 @@ function videoCover() {
     videoContainer.scrollLeft = (videoNewWidth - winWidth) / 2;
     videoContainer.scrollTop = (videoNewHeight - winHeight) / 2;
 };
-
-videoCover();
-
-window.addEventListener("resize", videoCover)
-
-
-// Brand quote stuff
-
-var brandMessage = $(".brands .brand-message")
-
-function selectBrandMessage(elem) {
-    var number = $(elem).data("number")
-
-    $(".brands .brand-logo").removeClass("active-brand")
-    $(".brands .brand-message").css("display", "none");
-    $(".brands #message-" + number).css("display", "inline-block");
-    $(elem).addClass("active-brand")
-}

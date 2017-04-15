@@ -1,8 +1,12 @@
 body {
-	font-family: DIN;
+	font-family: DIN !important;
     margin: 0;
     padding: 0;
     background-color: #fff;
+}
+
+* {
+    font-family: DIN;
 }
 
 html {
@@ -10,11 +14,16 @@ html {
     background-color: #fff;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .container {
     width: 90%;
     height: 100%;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1600px;
 }
 
 @media all and (max-width < 768px) {
@@ -76,6 +85,10 @@ section {
     padding-top: 7px;
 }
 
+.nav .nav-menu .links a:hover {
+    color: #999;
+}
+
 .nav .nav-menu .hamburger {
     width: 30px;
     padding-top: 10px;
@@ -104,13 +117,23 @@ section {
 
 /************************************* HERO HEADER **********************************/
 
-#video-container {
+.video-container {
     /*position: absolute;*/
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
+}
+
+.image-container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 video {
@@ -166,11 +189,28 @@ video {
 /************************************* BRAND LOGOS ***********************************/
 .brands {
     color: white;
-    background-color: #777;
+    background-color: #aaa;
 }
 
 .brands .brand-logo {
     opacity: .5;
+    background-position: 50% 50%;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    /*padding: 0 10px;*/
+    /*height: 60px;*/
+}
+
+.brands #logo-reviver {
+    background-image: url("img/reviver.png");
+}
+
+.brands #logo-breathometer {
+    background-image: url("img/breathometer.png");
+}
+
+.brands #logo-skully {
+    background-image: url("img/skully.png");
 }
 
 .brands .brand-logo:hover {
@@ -201,6 +241,7 @@ video {
 
 /************************************ FOOTER ******************************************/
 .footer {
+    background-color: #333;
     height: 200px;
     padding: 50px 0px;
 }
@@ -211,4 +252,117 @@ video {
 
 .footer .social img {
     width: 100%;
+}
+
+/******************************************************************************************/
+/******************************************************************************************/
+/********************************** ABOUT PAGE ********************************************/
+/******************************************************************************************/
+/******************************************************************************************/
+
+/******************************* HEADER ***************************************************/
+.about-header {
+    height: 100vh;
+}
+
+.about-header .header-text {
+    position: absolute;
+    bottom: 80px;
+    width: 60%;
+}
+
+.header-text h1 {
+    font-size: 5em;
+}
+
+/*.about-header .image-container {
+    background-color: black;
+    color: white;
+}*/
+
+/************************************* TEAM PHOTO ****************************************/
+
+.team-photo .team-image{
+    width: 100%;
+}
+
+.team-photo .team-image img {
+    width: 100%;
+}
+
+/*************************************** SERVICES ****************************************/
+.services {
+    padding: 60px 0;
+}
+
+.services .services-title {
+    
+}
+
+.services .service-lists .column {
+    text-align: center;
+}
+
+.services .service-lists .column .list{
+    display: inline-block;
+    text-align: left;
+}
+
+/*.services .service-lists .list{
+    text-align: left;
+}*/
+
+/************************************* TEAM GRID *****************************************/
+.team-grid {
+    /*height: 100vh;*/
+}
+
+.team-grid .row .photo {
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 25%;
+}
+
+.team-grid .row .photo:hover .filter {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.team-grid .row .photo .filter{
+    display: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255,255,255,.8);
+    /*padding-top: 5%;*/
+}
+
+.team-grid .row .photo .filter .photo-text {
+    width: 80%;
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    height: 80%;
+    /*background: red;*/
+}
+
+.team-grid .row #donald {
+    background-image: url("img/team/donald.jpg");
+}
+
+.team-grid .row #karen {
+    background-image: url("img/team/karen.jpg");
+}
+
+.team-grid .row #caitlin {
+    background-image: url("img/team/caitlin.jpg");
+}
+
+.team-grid .row #will {
+    background-image: url("img/team/will.jpg");
+}
+
+.team-grid .row #danny {
+    background-image: url("img/team/danny.jpg");
 }
