@@ -392,3 +392,38 @@ video {
 .team-grid .row #danny {
     background-image: url("img/team/danny.jpg");
 }
+
+/*****************************************************************************************/
+/*****************************************************************************************/
+/********************************** CONTACT PAGE *****************************************/
+/*****************************************************************************************/
+/*****************************************************************************************/
+
+/************************************ CONTACT SECTION ***********************************/
+.contact-section {
+    height: 100vh;
+}
+
+.contact-section .pure-g {
+    justify-content: center;
+}
+
+.contact-section .form {
+    padding: 30vh 0;
+}
+
+.contact-section .form form {
+    margin-left: 3%;
+}
+
+.contact-section .image {
+    background-image: url("img/contact.png");
+    background-position: 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.contact-section .form input, .contact-section .form textarea {
+    width: 90%;
+}
+
