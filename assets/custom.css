@@ -412,18 +412,28 @@ video {
     padding: 30vh 0;
 }
 
-.contact-section .form form {
-    margin-left: 3%;
+.contact-section .form .contact-title-holder {
+    width: 100%;
+    text-align: center;
 }
-
+/*
 .contact-section .image {
     background-image: url("img/contact.png");
     background-position: 50% 50%;
     background-size: contain;
     background-repeat: no-repeat;
 }
+*/
 
 .contact-section .form input, .contact-section .form textarea {
-    width: 90%;
+    width: 100%;
 }
 
+.contact-section .form textarea {
+    height: 120px;
+}
+
+.contact-section .form #send-button {
+    background-color: #000;
+    color: #fff;
+}
