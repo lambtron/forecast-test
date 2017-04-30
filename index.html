@@ -28,13 +28,13 @@
     </div>
     <section>
         <div class="video-container">
-            <video poster="assets/img/hero-poster.png" preload="auto" width="1920" height="1080" autoplay loop muted>
-                <source src="assets/videos/hero.webm" type="video/webm">
+            <video class="background-video" poster="assets/img/hero-poster.png" preload="auto" width="1920" height="1080" autoplay loop muted>
+                <!-- <source src="assets/videos/hero.webm" type="video/webm"> -->
                 <source src="assets/videos/hero.mp4" type="video/mp4">
             </video>
             <div>
     </section>
-    <section>
+    <section class="reel">
         <div class="video-container">
             <video id="reel" poster="assets/img/reel-poster.jpg" preload="auto" width="1920" height="1080" autoplay loop muted>
                 <source src="assets/videos/reel.webm" type="video/webm">
@@ -43,74 +43,108 @@
             <div>
     </section>
     <section class="portfolio">
-<!--        <div class="container"> -->
-            <!-- ROW 1 -->
-            <div class="pure-g">
-                <div class="port-block pure-u-1 pure-u-lg-99-100">
-                    <div class="port-content">
-                        <div class="filter">
-                            <div class="port-text">
-                                <p>PORTFOLIO PIECE</p>
-                            </div>
+        <!-- ROW 1 -->
+        <div class="pure-g">
+            <div class="port-block pure-u-1 pure-u-lg-99-100">
+                <div class="port-content" id="port1">
+                    <div class="filter">
+                        <div class="port-text">
+                            <p>PORTFOLIO PIECE</p>
                         </div>
                     </div>
+                    <!-- <div class="port-video-container">
+                        <video class="background-video" preload="auto" autoplay loop muted>
+                            <source src="assets/videos/portfolio/explosive.webm" type="video/webm">
+                            <source src="assets/videos/portfolio/explosive.mp4" type="video/mp4">
+                        </video>
+                    </div> -->
                 </div>
-                <div class="pure-u-lg-2-100"></div>
-                <div class="port-block pure-u-1 pure-u-lg-99-100">
-                    <div class="port-content">
-                        <div class="filter">
-                            <div class="port-text">
-                                <p>PORTFOLIO PIECE</p>
-                            </div>
+            </div>
+            <div class="pure-u-lg-2-100"></div>
+            <div class="port-block pure-u-1 pure-u-lg-99-100">
+                <div class="port-content" id="port2">
+                    <div class="filter">
+                        <div class="port-text">
+                            <p>PORTFOLIO PIECE</p>
                         </div>
+                    </div>
+                    <div class="port-video-container">
+                        <video class="background-video" preload="auto" autoplay loop muted>
+                            <!-- <source src="assets/videos/portfolio/mint.webm" type="video/webm"> -->
+                            <source src="assets/videos/portfolio/mint.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
             </div>
-            <!-- ROW 2 -->
-            <div class="pure-g">
-                <div class="port-block pure-u-1 pure-u-lg-99-100">
-                    <div class="port-content">
-                        <div class="filter">
-                            <div class="port-text">
-                                <p>PORTFOLIO PIECE</p>
-                            </div>
+        </div>
+        <!-- ROW 2 -->
+        <div class="pure-g">
+            <div class="port-block pure-u-1 pure-u-lg-99-100">
+                <div class="port-content" id="port3">
+                    <div class="filter">
+                        <div class="port-text">
+                            <p>PORTFOLIO PIECE</p>
                         </div>
                     </div>
-                </div>
-                <div class="pure-u-lg-2-100"></div>
-                <div class="port-block pure-u-1 pure-u-lg-99-100">
-                    <div class="port-content">
-                        <div class="filter">
-                            <div class="port-text">
-                                <p>PORTFOLIO PIECE</p>
-                            </div>
-                        </div>
+                    <div class="port-video-container">
+                        <video class="background-video" preload="auto" autoplay loop muted>
+                            <!-- <source src="assets/videos/portfolio/explosive.webm" type="video/webm"> -->
+                            <source src="assets/videos/portfolio/explosive.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
             </div>
-            <!-- ROW 3 -->
-            <div class="pure-g">
-                <div class="port-block pure-u-1 pure-u-lg-99-100">
-                    <div class="port-content">
-                        <div class="filter">
-                            <div class="port-text">
-                                <p>PORTFOLIO PIECE</p>
-                            </div>
+            <div class="pure-u-lg-2-100"></div>
+            <div class="port-block pure-u-1 pure-u-lg-99-100">
+                <div class="port-content" id="port4">
+                    <div class="filter">
+                        <div class="port-text">
+                            <p>PORTFOLIO PIECE</p>
                         </div>
                     </div>
-                </div>
-                <div class="pure-u-lg-2-100"></div>
-                <div class="port-block pure-u-1 pure-u-lg-99-100">
-                    <div class="port-content">
-                        <div class="filter">
-                            <div class="port-text">
-                                <p>PORTFOLIO PIECE</p>
-                            </div>
-                        </div>
+                    <div class="port-video-container">
+                        <video class="background-video" preload="auto" autoplay loop muted>
+                            <!-- <source src="assets/videos/portfolio/DTSF_2.webm" type="video/webm"> -->
+                            <source src="assets/videos/portfolio/artichoke2.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
             </div>
-        <!--</div>-->
+        </div>
+        <!-- ROW 3 -->
+        <div class="pure-g">
+            <div class="port-block pure-u-1 pure-u-lg-99-100">
+                <div class="port-content" id="port5">
+                    <div class="filter">
+                        <div class="port-text">
+                            <p>PORTFOLIO PIECE</p>
+                        </div>
+                    </div>
+                    <div class="port-video-container">
+                        <video class="background-video" preload="auto" autoplay loop muted>
+                            <source src="assets/videos/portfolio/DTSF_2.webm" type="video/webm">
+                            <source src="assets/videos/portfolio/DTSF_2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="pure-u-lg-2-100"></div>
+            <div class="port-block pure-u-1 pure-u-lg-99-100">
+                <div class="port-content" id="port6">
+                    <div class="filter">
+                        <div class="port-text">
+                            <p>PORTFOLIO PIECE</p>
+                        </div>
+                    </div>
+                    <!-- <div class="port-video-container">
+                        <video class="background-video" preload="auto" autoplay loop muted>
+                            <source src="assets/videos/portfolio/DTSF_2.webm" type="video/webm">
+                            <source src="assets/videos/portfolio/DTSF_2.mp4" type="video/mp4">
+                        </video>
+                    </div> -->
+                </div>
+            </div>
+        </div>
     </section>
     <!--<section class="brands">
         <div class="container">
@@ -178,7 +212,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="assets/script.js"></script>
     <script type="text/javascript">
-
     function onVisibilityChange(el, callback) {
         var old_visible;
         return function() {

@@ -142,6 +142,11 @@ section {
     overflow: hidden;
 }
 
+.background-video {
+    width: 100%;
+    height: 100%;
+}
+
 .image-container {
     top: 0;
     left: 0;
@@ -158,10 +163,17 @@ video {
     height: auto;
 }
 
+/******************************************** REEL *****************************************/
+.reel {
+    
+}
+
 /****************************************** PORTFOLIO *********************************************/
 
 .portfolio .port-block {
-    min-height: 300px;
+    /*min-height: 300px;
+    max-height: 300px;*/
+    height: 400px;
 }
 
 .portfolio .port-block img {
@@ -172,10 +184,49 @@ video {
 .portfolio .port-block .port-content {
     width: 100%;
     height: 100%;
-    background-image: url("http://placehold.it/1000x400");
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
+    overflow: hidden;
+    position: relative;
+}
+
+.portfolio .port-block #port1 {
+    background-image: url("img/portfolio/reviver.png");
+}
+
+.portfolio .port-block #port2 {
+    background: rgba(0,0,0,0);
+}
+
+.portfolio .port-block #port3{
+    background-image: url("http://placehold.it/1000x400");   
+}
+
+.portfolio .port-block #port4{
+    background: rgba(0,0,0,0);
+}
+
+.portfolio .port-block #port5 {
+    background: rgba(0,0,0,0);
+}
+
+.portfolio .port-block #port6 {
+    background-image: url("http://placehold.it/1000x400");
+}
+
+.portfolio .port-block .port-video-container {
+    width: 100%;
+    /*height: 100%;*/
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.portfolio .port-block .port-content video {
+    width: 100%;
+    height: 100%;
 }
 
 .portfolio .port-block .port-content:hover .filter {
@@ -185,10 +236,13 @@ video {
 
 .portfolio .port-block .port-content .filter{
     display: none;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(255,255,255,.8);
+    background-color: rgba(255,255,255,.6);
+    z-index: 10;
     /*padding-top: 5%;*/
 }
 

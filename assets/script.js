@@ -1,17 +1,9 @@
-var videoContainer = document.querySelector("#video-container");
-var videoElem = document.querySelector("#video-container video");
-if (videoElem) {
-    var vidWOrig;
-    var vidHOrig;
-    vidWOrig = videoElem.getAttribute("width");
-    vidHOrig = videoElem.getAttribute("height");
+var videos = $(".background-video");
 
-    var minW = 320;
+videoCover();
 
-    videoCover();
+window.addEventListener("resize", videoCover)
 
-    window.addEventListener("resize", videoCover)
-}
 // Brand quote stuff
 
 var brandMessage = $(".brands .brand-message")
@@ -45,31 +37,47 @@ function isElementInViewport (el) {
 
 function videoCover() {
 
-    // Find the current width and height of the viewport
-    var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    var winHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    for (var i=0; i<videos.length; i++)
+    {
+        var videoElem = videos[i];
+        var videoContainer = videoElem.parentElement;
+        console.log(videoElem);
 
-    // Resize the video container to match the viewport
-    videoContainer.style.width = winWidth + 'px';
-    videoContainer.style.height = winHeight + 'px';
+        var vidWOrig;
+        var vidHOrig;
+        vidWOrig = videoElem.getAttribute("width");
+        vidHOrig = videoElem.getAttribute("height");
 
-    // Find the largest scale factor of horizontal/vertical
-    var scaleH = winWidth / vidWOrig;
-    var scaleV = winHeight / vidHOrig;
-    var scale = scaleH > scaleV ? scaleH : scaleV;
+        var minW = 0;
 
-    // Don't allow scaled width to be less than min width
-    if (scale * vidWOrig < minW) {
-        scale = minW / vidWOrig;
+        // Find the current width and height of the viewport
+        var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var winHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+        if (videoContainer.getAttribute("class") == "video-container") {
+            // Resize the video container to match the viewport
+            videoContainer.style.width = winWidth + 'px';
+            videoContainer.style.height = winHeight + 'px';
+        }
+
+        // Find the largest scale factor of horizontal/vertical
+        var scaleH = winWidth / vidWOrig;
+        var scaleV = winHeight / vidHOrig;
+        var scale = scaleH > scaleV ? scaleH : scaleV;
+
+        // Don't allow scaled width to be less than min width
+        if (scale * vidWOrig < minW) {
+            scale = minW / vidWOrig;
+        }
+
+        // Scale the video
+        var videoNewWidth = scale * vidWOrig;
+        var videoNewHeight = scale * vidHOrig;
+        videoElem.style.width = videoNewWidth + 'px';
+        videoElem.style.height = videoNewHeight + 'px';
+
+        // Align to middle by scrolling within the container
+        videoContainer.scrollLeft = (videoNewWidth - winWidth) / 2;
+        videoContainer.scrollTop = (videoNewHeight - winHeight) / 2;
     }
-
-    // Scale the video
-    var videoNewWidth = scale * vidWOrig;
-    var videoNewHeight = scale * vidHOrig;
-    videoElem.style.width = videoNewWidth + 'px';
-    videoElem.style.height = videoNewHeight + 'px';
-
-    // Align to middle by scrolling within the container
-    videoContainer.scrollLeft = (videoNewWidth - winWidth) / 2;
-    videoContainer.scrollTop = (videoNewHeight - winHeight) / 2;
 };
