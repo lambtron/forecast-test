@@ -19,21 +19,21 @@ a {
     text-decoration: none;
 }
 
-.btn {
-    color: #fff;
-    background: #000;
-    padding: 15px 30px;
-    text-decoration: none;
-/*    -webkit-transition-duration: .1s;
-    transition-duration: .1s;*/
-}
 
-.btn:hover {
+.btn {
     background: #fff;
     color: #000;
     border: 2px solid #000;
+    padding: 15px 30px;
+    text-decoration: none;
 }
 
+.btn:hover {
+    color: #fff;
+    background: #000;
+/*    -webkit-transition-duration: .1s;
+    transition-duration: .1s;*/
+}
 
 .container {
     width: 90%;
@@ -76,7 +76,9 @@ section {
     top: 0;
     height: 60px;
     width: 100%;
-    background-color: rgba(255,255,255, .2);
+    /*background-color: rgba(255,255,255, .2);*/
+    background-color: #000;
+    color: white;
 }
 
 .nav .logo {
@@ -171,9 +173,9 @@ video {
 /****************************************** PORTFOLIO *********************************************/
 
 .portfolio .port-block {
-    /*min-height: 300px;
-    max-height: 300px;*/
-    height: 400px;
+    /*min-height: 290px;*/
+    /*max-height: 300px;*/
+    height: 350px;
 }
 
 .portfolio .port-block img {
@@ -200,7 +202,7 @@ video {
 }
 
 .portfolio .port-block #port3{
-    background-image: url("http://placehold.it/1000x400");   
+    background: rgba(0,0,0,0);   
 }
 
 .portfolio .port-block #port4{
@@ -463,6 +465,12 @@ video {
 
 .team-grid .row #will {
     background-image: url("img/team/will.jpg");
+}
+
+.team-grid .row #logo {
+    background-image: url("img/logo.png");
+    background-size: contain;
+    background-position: 30% 50%; 
 }
 
 .team-grid .row #danny {
