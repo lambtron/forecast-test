@@ -1,8 +1,74 @@
-var videos = $(".background-video");
+$(document).ready(function() {
 
-videoCover();
+    // Resive video
+    scaleVideoContainer();
 
-window.addEventListener("resize", videoCover)
+    initBannerVideoSize('.video-container video');
+
+    $(window).on('resize', function() {
+        scaleVideoContainer();
+        scaleBannerVideoSize('.video-container video');
+    });
+
+});
+
+/** Reusable Functions **/
+/********************************************************************/
+function scaleVideoContainer() {
+
+    var height = $(window).height();
+    var unitHeight = parseInt(height) + 'px';
+    $('.video-background').css('height', unitHeight);
+
+}
+
+function initBannerVideoSize(element) {
+
+    $(element).each(function() {
+        $(this).data('height', $(this).height());
+        $(this).data('width', $(this).width());
+    });
+
+    scaleBannerVideoSize(element);
+
+}
+
+function scaleBannerVideoSize(element) {
+
+    var windowWidth = $(window).width(),
+        windowHeight = $(window).height(),
+        videoWidth,
+        videoHeight;
+
+    $(element).each(function() {
+        var videoAspectRatio = $(this).data('height') / $(this).data('width'),
+            windowAspectRatio = windowHeight / windowWidth;
+
+        if (videoAspectRatio > windowAspectRatio) {
+            videoWidth = windowWidth;
+            videoHeight = videoWidth * videoAspectRatio;
+            console.log(windowWidth);
+            console.log(videoWidth);
+            $(this).css({
+                'top': -(videoHeight - windowHeight) / 2 + 'px',
+                'margin-left': 0
+            });
+        } else {
+            videoHeight = windowHeight;
+            videoWidth = videoHeight / videoAspectRatio;
+            $(this).css({
+                'margin-top': 0,
+                'margin-left': -(videoWidth - windowWidth) / 2 + 'px'
+            });
+        }
+
+        $(this).width(videoWidth).height(videoHeight);
+
+        $('.video-container video').addClass('fadeIn animated');
+
+
+    });
+}
 
 // Brand quote stuff
 
@@ -34,50 +100,3 @@ function isElementInViewport (el) {
         rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
     );
 }
-
-function videoCover() {
-
-    for (var i=0; i<videos.length; i++)
-    {
-        var videoElem = videos[i];
-        var videoContainer = videoElem.parentElement;
-        console.log(videoElem);
-
-        var vidWOrig;
-        var vidHOrig;
-        vidWOrig = videoElem.getAttribute("width");
-        vidHOrig = videoElem.getAttribute("height");
-
-        var minW = 0;
-
-        // Find the current width and height of the viewport
-        var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        var winHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-
-        if (videoContainer.getAttribute("class") == "video-container") {
-            // Resize the video container to match the viewport
-            videoContainer.style.width = winWidth + 'px';
-            videoContainer.style.height = winHeight + 'px';
-        }
-
-        // Find the largest scale factor of horizontal/vertical
-        var scaleH = winWidth / vidWOrig;
-        var scaleV = winHeight / vidHOrig;
-        var scale = scaleH > scaleV ? scaleH : scaleV;
-
-        // Don't allow scaled width to be less than min width
-        if (scale * vidWOrig < minW) {
-            scale = minW / vidWOrig;
-        }
-
-        // Scale the video
-        var videoNewWidth = scale * vidWOrig;
-        var videoNewHeight = scale * vidHOrig;
-        videoElem.style.width = videoNewWidth + 'px';
-        videoElem.style.height = videoNewHeight + 'px';
-
-        // Align to middle by scrolling within the container
-        videoContainer.scrollLeft = (videoNewWidth - winWidth) / 2;
-        videoContainer.scrollTop = (videoNewHeight - winHeight) / 2;
-    }
-};
