@@ -356,18 +356,23 @@ video {
     background-color: #000;
     height: 100px;
     padding: 50px 0px;
+    color: white;
 }
 
 .footer .footer-content {
     height: 100px;
 }
 
+.footer .footer-right {
+    text-align: right;
+}
+
 .footer .social {
-    padding: 0 10px;
+    padding: 0 1%;
 }
 
 .footer .social img {
-    width: 100%;
+    width: 98%;
 }
 
 /******************************************************************************************/
