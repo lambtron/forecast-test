@@ -82,13 +82,20 @@ section {
 }
 
 .nav .logo {
-    height: 40px;
+    /*top: 0;*/
+    height: 100%;
     padding: 10px 0;
     text-align: left;
+    /*position: relative;*/
 }
 
 .nav .logo img {
-    height: 100%;
+    /*max-width: 100%;*/
+    /*max-height: 100%;*/
+    width: 200px;
+    height: 16px;
+    margin-top: 12px;
+    /*padding: 5px;*/
 }
 
 .nav .nav-menu {
@@ -100,7 +107,7 @@ section {
     display: none;
     list-style: none;
     height: 100%;
-    padding-top: 7px;
+    /*margin-top: 7px;*/
 }
 
 .nav .nav-menu .links a:hover {
@@ -109,7 +116,7 @@ section {
 
 .nav .nav-menu .hamburger {
     width: 30px;
-    padding-top: 10px;
+    padding-top: 12px;
     display: inline-block;
 }
 
@@ -202,7 +209,8 @@ video {
 }
 
 .portfolio .port-block #port1 {
-    background-image: url("img/portfolio/reviver.png");
+    /*background-image: url("img/portfolio/reviver.png");*/
+    background: rgba(0,0,0,0);
 }
 
 .portfolio .port-block #port2 {
