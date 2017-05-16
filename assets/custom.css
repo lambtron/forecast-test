@@ -377,10 +377,11 @@ video {
 
 .footer .social {
     /*padding: 0 4%;*/
+    text-align: center;
 }
 
 .footer .social img {
-    width: 100%;
+    width: 70%;
     display: inline-block;
 }
 
