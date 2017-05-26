@@ -230,7 +230,7 @@ video {
 }
 
 .portfolio .port-block #port6 {
-    background-image: url("http://placehold.it/1000x400");
+    background: rgba(0,0,0,0);
 }
 
 .portfolio .port-block .port-video-container {
@@ -427,7 +427,7 @@ video {
 
 /*************************************** SERVICES ****************************************/
 .services {
-    padding: 60px 0;
+    padding: 30px 0;
 }
 
 .services .services-title {
@@ -476,7 +476,8 @@ video {
 .team-grid .row .photo .filter .photo-text {
     width: 80%;
     position: absolute;
-    left: 20%;
+    left: 10%;
+    right: 10%;
     top: 20%;
     height: 80%;
     /*background: red;*/
