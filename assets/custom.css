@@ -159,7 +159,7 @@ section {
 .video-container .header-text {
     position: absolute;
     width: 95%;
-    bottom: 80px;
+    top: 80px;
     padding-left: 5%;
 }
 
@@ -183,6 +183,10 @@ video {
 /******************************************** REEL *****************************************/
 .reel {
     background: #000;
+}
+
+.timelapse .header-text {
+    color: white;
 }
 
 /****************************************** PORTFOLIO *********************************************/
