@@ -9,22 +9,27 @@
 </head>
 
 <body>
-    <div class="nav">
+    <div class="nav" id="myTopnav">
         <div class="pure-g">
             <div class="logo pure-u-7-24">
                 <a href="index.html"><img src="assets/img/logo-white.png"></a>
             </div>
             <div class="nav-menu pure-u-16-24">
-                <div class="hamburger">
+                <!-- <div class="hamburger">
                     <img src="assets/img/hamburger-white.png">
                     <div class="mobile-nav">
                     </div>
-                </div>
+                </div> -->
                 <ul class="links">
-                    <li><a href="work.html">Work</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li class="navlink"><a href="work.html">Work</a></li>
+                    <li class="navlink"><a href="about.html">About</a></li>
+                    <li class="navlink"><a href="contact.html">Contact</a></li>
+                    <li><a href="javascript:void(0);" class="icon" onclick="openNav()">&#9776;</a></li>
                 </ul>
+                <!-- <a class="navlink" href="work.html">Work</a>
+                <a class="navlink" href="about.html">About</a>
+                <a class="navlink" href="contact.html">Contact</a>
+                <a class="navlink" href="javascript:void(0);" class="icon" onclick="openNav()">&#9776;</a> -->
             </div>
         </div>
     </div>
@@ -34,6 +39,11 @@
                 <source src="assets/videos/reel.webm" type="video/webm">
                 <source src="assets/videos/reel.mp4" type="video/mp4">
             </video>
+            <div class="header-text">
+                <img id="speaker" src="assets/img/speaker-off.svg">
+            </div>
+            <!-- TOGGLE SOUND -->
+        </div>
         </div>
     </section>
     <section class="timelapse">

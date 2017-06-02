@@ -1,5 +1,5 @@
 body {
-	font-family: DIN !important;
+    font-family: DIN !important;
     margin: 0;
     padding: 0;
     background-color: #fff;
@@ -10,7 +10,7 @@ body {
 }
 
 html {
-	overflow-x: hidden;
+    overflow-x: hidden;
     background-color: #fff;
 }
 
@@ -18,7 +18,6 @@ a {
     color: inherit;
     text-decoration: none;
 }
-
 
 .btn {
     background: #fff;
@@ -31,7 +30,7 @@ a {
 .btn:hover {
     color: #fff;
     background: #000;
-/*    -webkit-transition-duration: .1s;
+    /*    -webkit-transition-duration: .1s;
     transition-duration: .1s;*/
 }
 
@@ -50,7 +49,7 @@ a {
 
 .portfolio .pure-g {
     margin: 10px 0;
-   /* justify-content: center;*/
+    /* justify-content: center;*/
 }
 
 .spacer {
@@ -59,13 +58,14 @@ a {
 }
 
 @font-face {
-	font-family: DIN;
-	src: url("fonts/DIN.otf") format("opentype");
+    font-family: DIN;
+    src: url("fonts/DIN.otf") format("opentype");
 }
 
 section {
     position: relative;
 }
+
 
 /************************************* NAVIGATION ************************************/
 
@@ -79,6 +79,17 @@ section {
     /*background-color: rgba(255,255,255, .2);*/
     background-color: #000;
     color: white;
+}
+
+/* Style the links inside the navigation bar */
+.links .navlink {
+    /*float: left;*/
+    display: block;
+    /*color: #f2f2f2;*/
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
 }
 
 .nav .logo {
@@ -104,7 +115,7 @@ section {
 }
 
 .nav .nav-menu .links {
-    display: none;
+    /*display: none;*/
     list-style: none;
     height: 100%;
     /*margin-top: 7px;*/
@@ -114,7 +125,13 @@ section {
     color: #999;
 }
 
-.nav .nav-menu .hamburger {
+.nav .icon {
+    display: none;
+    font-size: 25px;
+}
+
+
+/*.nav .nav-menu .hamburger {
     width: 30px;
     padding-top: 12px;
     display: inline-block;
@@ -122,22 +139,49 @@ section {
 
 .nav .nav-menu .hamburger img {
     width: 100%;
+}*/
+
+
+/* MD size, greater than 1024 */
+
+@media all and (max-width: 1024px) {
+
+    .nav .nav-menu .links .navlink {
+        display: none;
+    }
+
+    .nav a.icon {
+        float: right;
+        display: block;
+    }
+    /*.nav .nav-menu .links {
+        display: inline-block;
+    }
+    .nav .nav-menu .hamburger {
+        display: none;
+    }*/
 }
 
+@media screen and (max-width: 1024px) {
+  /*.nav.responsive {position: relative;}*/
+  .nav.responsive {
+    height: 200px;
+  }
+  .nav.responsive .navlink.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .nav.responsive .nav-menu .links .navlink, .nav.responsive a  {
+    float: none;
+    display: block;
+    text-align: right;
+    padding-bottom: 10px;
+  }
+}
 .nav .nav-menu .links li {
     display: inline-block;
     padding: 0 20px;
-}
-    
-/* MD size, greater than 1024 */
-@media all and (min-width: 1024px) {
-    .nav .nav-menu .links {
-        display: inline-block;
-    }
-
-    .nav .nav-menu .hamburger {
-        display: none;
-    }
 }
 
 /************************************* HERO HEADER **********************************/
@@ -163,7 +207,6 @@ section {
     padding-left: 5%;
 }
 
-
 .image-container {
     top: 0;
     left: 0;
@@ -180,14 +223,46 @@ video {
     height: auto;
 }
 
+
 /******************************************** REEL *****************************************/
+
 .reel {
     background: #000;
+}
+
+.reel .header-text {
+    color: white;
+    bottom: 30px;
+    left: 30px;
+    top: initial;
+    /*right: 0;*/
+    display: none;
+    width: 100px;
+    height: 100px;
+    /*background: url("img/speaker-off.svg");*/
+}
+
+.reel .header-text:hover {
+    cursor: pointer;
+}
+
+.reel .header-text img {
+    /*width: 100%;*/
+    max-height: 100%;
+}
+
+#speaker:hover {
+    fill: #fff;
+}
+
+.reel:hover .header-text {
+    display: block;
 }
 
 .timelapse .header-text {
     color: white;
 }
+
 
 /****************************************** PORTFOLIO *********************************************/
 
@@ -214,27 +289,27 @@ video {
 
 .portfolio .port-block #port1 {
     /*background-image: url("img/portfolio/reviver.png");*/
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
 }
 
 .portfolio .port-block #port2 {
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
 }
 
-.portfolio .port-block #port3{
-    background: rgba(0,0,0,0);   
+.portfolio .port-block #port3 {
+    background: rgba(0, 0, 0, 0);
 }
 
-.portfolio .port-block #port4{
-    background: rgba(0,0,0,0);
+.portfolio .port-block #port4 {
+    background: rgba(0, 0, 0, 0);
 }
 
 .portfolio .port-block #port5 {
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
 }
 
 .portfolio .port-block #port6 {
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
 }
 
 .portfolio .port-block .port-video-container {
@@ -256,14 +331,14 @@ video {
     cursor: pointer;
 }
 
-.portfolio .port-block .port-content .filter{
+.portfolio .port-block .port-content .filter {
     display: none;
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(255,255,255,.6);
+    background-color: rgba(255, 255, 255, .6);
     z-index: 10;
     /*padding-top: 5%;*/
 }
@@ -286,13 +361,14 @@ video {
     .pure-u-lg-99-100 {
         width: 49.75%;
     }
-    
     .pure-u-lg-2-100 {
         width: .5%;
     }
 }
 
+
 /************************************* BRAND LOGOS ***********************************/
+
 .brands {
     color: white;
     background-color: #aaa;
@@ -345,7 +421,9 @@ video {
     display: inline-block;
 }
 
+
 /********************************** STATEMENT *****************************************/
+
 .statement {
     height: 500px;
     padding: 90px 0px;
@@ -356,14 +434,18 @@ video {
     background-repeat: no-repeat;
 }
 
+
 /********************************* CONTACT CTA ****************************************/
+
 .contact-cta {
     height: 100px;
     text-align: center;
     padding-top: 50px;
 }
 
+
 /************************************ FOOTER ******************************************/
+
 .footer {
     background-color: #000;
     height: 100px;
@@ -393,13 +475,24 @@ video {
     text-align: center;
 }
 
-/******************************************************************************************/
-/******************************************************************************************/
-/********************************** ABOUT PAGE ********************************************/
-/******************************************************************************************/
+
 /******************************************************************************************/
 
+
+/******************************************************************************************/
+
+
+/********************************** ABOUT PAGE ********************************************/
+
+
+/******************************************************************************************/
+
+
+/******************************************************************************************/
+
+
 /******************************* HEADER ***************************************************/
+
 .about-header {
     height: 100vh;
 }
@@ -414,14 +507,16 @@ video {
     font-size: 5em;
 }
 
+
 /*.about-header .image-container {
     background-color: black;
     color: white;
 }*/
 
+
 /************************************* TEAM PHOTO ****************************************/
 
-.team-photo .team-image{
+.team-photo .team-image {
     width: 100%;
 }
 
@@ -429,29 +524,32 @@ video {
     width: 100%;
 }
 
+
 /*************************************** SERVICES ****************************************/
+
 .services {
     padding: 30px 0;
 }
 
-.services .services-title {
-    
-}
+.services .services-title {}
 
 .services .service-lists .column {
     text-align: center;
 }
 
-.services .service-lists .column .list{
+.services .service-lists .column .list {
     display: inline-block;
     text-align: left;
 }
+
 
 /*.services .service-lists .list{
     text-align: left;
 }*/
 
+
 /************************************* TEAM GRID *****************************************/
+
 .team-grid {
     /*height: 100vh;*/
 }
@@ -468,12 +566,12 @@ video {
     cursor: pointer;
 }
 
-.team-grid .row .photo .filter{
+.team-grid .row .photo .filter {
     display: none;
     position: relative;
     height: 100%;
     width: 100%;
-    background-color: rgba(255,255,255,.8);
+    background-color: rgba(255, 255, 255, .8);
     /*padding-top: 5%;*/
 }
 
@@ -506,20 +604,31 @@ video {
 .team-grid .row #logo {
     background-image: url("img/logo.png");
     background-size: contain;
-    background-position: 30% 50%; 
+    background-position: 30% 50%;
 }
 
 .team-grid .row #danny {
     background-image: url("img/team/danny.jpg");
 }
 
-/*****************************************************************************************/
-/*****************************************************************************************/
-/********************************** CONTACT PAGE *****************************************/
-/*****************************************************************************************/
+
 /*****************************************************************************************/
 
+
+/*****************************************************************************************/
+
+
+/********************************** CONTACT PAGE *****************************************/
+
+
+/*****************************************************************************************/
+
+
+/*****************************************************************************************/
+
+
 /************************************ CONTACT SECTION ***********************************/
+
 .contact-section {
     height: 100vh;
     background-image: url("img/contact-background.jpg");
@@ -535,13 +644,15 @@ video {
 .contact-section .form {
     padding: 30vh 0;
     background-color: red;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 20%, #FFFFFF 20%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, #FFFFFF 20%);
 }
 
 .contact-section .form .contact-title-holder {
     width: 100%;
     text-align: center;
 }
+
+
 /*
 .contact-section .image {
     background-image: url("img/contact.png");
@@ -551,7 +662,8 @@ video {
 }
 */
 
-.contact-section .form input, .contact-section .form textarea {
+.contact-section .form input,
+.contact-section .form textarea {
     width: 80%;
     margin-left: 10%;
 }

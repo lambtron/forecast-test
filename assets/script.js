@@ -10,6 +10,16 @@ $(document).ready(function() {
         scaleBannerVideoSize('.video-container video');
     });
 
+    $(".reel .header-text").on('click', function() {
+        if ($("#reel").prop('muted')) {
+            $("#reel").prop('muted', false);
+            $("#speaker").prop("src", "assets/img/speaker-on.svg");
+        } else {
+            $("#reel").prop('muted', true)
+            $("#speaker").prop("src", "assets/img/speaker-off.svg");
+        }
+    })
+
 });
 
 /** Reusable Functions **/
@@ -99,4 +109,13 @@ function isElementInViewport (el) {
         rect.bottom <= (window.innerHeight + 400 || document.documentElement.clientHeight + 400) && /*or $(window).height() */
         rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
     );
+}
+
+function openNav() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "nav") {
+        x.className += " responsive";
+    } else {
+        x.className = "nav";
+    }
 }
