@@ -202,9 +202,10 @@ section {
 
 .video-container .header-text {
     position: absolute;
-    width: 95%;
+    width: 90%;
     top: 80px;
     padding-left: 5%;
+    padding-right: 5%;
 }
 
 .image-container {
