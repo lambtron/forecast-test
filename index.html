@@ -3,40 +3,299 @@
 
 <head>
     <title>Forecast Studios</title>
-    <link rel="stylesheet" href="assets/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="assets/custom.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="imageHeader">
-            <img src="assets/img/logo.png">
+    <div class="nav" id="myTopnav">
+        <div class="pure-g">
+            <div class="logo pure-u-7-24">
+                <a href="index.html"><img src="assets/img/logo-white.png"></a>
+            </div>
+            <div class="nav-menu pure-u-16-24">
+                <!-- <div class="hamburger">
+                    <img src="assets/img/hamburger-white.png">
+                    <div class="mobile-nav">
+                    </div>
+                </div> -->
+                <ul class="links">
+                    <li class="navlink"><a href="work.html">Work</a></li>
+                    <li class="navlink"><a href="about.html">About</a></li>
+                    <li class="navlink"><a href="contact.html">Contact</a></li>
+                    <li><a href="javascript:void(0);" class="icon" onclick="openNav()">&#9776;</a></li>
+                </ul>
+                <!-- <a class="navlink" href="work.html">Work</a>
+                <a class="navlink" href="about.html">About</a>
+                <a class="navlink" href="contact.html">Contact</a>
+                <a class="navlink" href="javascript:void(0);" class="icon" onclick="openNav()">&#9776;</a> -->
+            </div>
         </div>
-        <h2>Stay tuned, we are launching very soon...</h2>
-        <ul class="countdown">
-            <li class="days">
-                <div class="timer"></div>
-                <br>
-                <div class="label">Days</div>
-            </li>
-            <li class="hours">
-                <div class="timer"></div>
-                <br>
-                <div class="label">Hours</div>
-            </li>
-            <li class="minutes">
-                <div class="timer"></div>
-                <br>
-                <div class="label">Minutes</div>
-            </li>
-            <li class="seconds">
-                <div class="timer"></div>
-                <br>
-                <div class="label">Seconds</div>
-            </li>
-        </ul>
     </div>
+    <section class="reel">
+        <div class="video-container">
+            <video id="reel" poster="assets/img/reel-poster.jpg" preload="auto" width="1920" height="1080" autoplay loop muted>
+                <source src="assets/videos/reel.webm" type="video/webm">
+                <source src="assets/videos/reel.mp4" type="video/mp4">
+            </video>
+            <div class="header-text">
+                <img id="speaker" src="assets/img/speaker-off.svg">
+            </div>
+            <!-- TOGGLE SOUND -->
+        </div>
+        </div>
+    </section>
+    <section class="timelapse">
+        <div class="video-container">
+            <video class="background-video" poster="assets/img/hero-poster.png" preload="auto" width="1920" height="1080" autoplay loop muted>
+                <!-- <source src="assets/videos/hero.webm" type="video/webm"> -->
+                <source src="assets/videos/Drone_Tahoe.mp4" type="video/mp4">
+            </video>
+            <div class="header-text">
+                <h1>FORECAST is an independent collective of fearless creatives.</h1>
+                <!-- <h2>Ut enim ad minim veniam, quis nostrud execitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h2> -->
+            </div>
+        </div>
+    </section>
+    <section class="portfolio">
+        <!-- ROW 1 -->
+        <div class="pure-g">
+            <div class="port-block pure-u-1 pure-u-lg-99-100">
+                <div class="port-content" id="port1">
+                    <div class="filter">
+                        <div class="port-text">
+                            <p>Reviver</p>
+                        </div>
+                    </div>
+                    <div class="port-video-container">
+                        <video class="background-video" preload="auto" autoplay loop muted>
+                            <!-- <source src="assets/videos/portfolio/reviver.webm" type="video/webm"> -->
+                            <source src="assets/videos/portfolio/reviver.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="pure-u-lg-2-100"></div>
+            <div class="port-block pure-u-1 pure-u-lg-99-100">
+                <div class="port-content" id="port2">
+                    <div class="filter">
+                        <div class="port-text">
+                            <p>SKULLY</p>
+                        </div>
+                    </div>
+                    <div class="port-video-container">
+                        <video class="background-video" preload="auto" autoplay loop muted>
+                            <!-- <source src="assets/videos/portfolio/explosive.webm" type="video/webm"> -->
+                            <source src="assets/videos/portfolio/explosive.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ROW 2 -->
+        <div class="pure-g">
+            <div class="port-block pure-u-1 pure-u-lg-99-100">
+                <div class="port-content" id="port3">
+                    <div class="filter">
+                        <div class="port-text">
+                            <p>Breathometer</p>
+                        </div>
+                    </div>
+                    <div class="port-video-container">
+                        <video class="background-video" preload="auto" autoplay loop muted>
+                            <!-- <source src="assets/videos/portfolio/mint.webm" type="video/webm"> -->
+                            <source src="assets/videos/portfolio/mint.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="pure-u-lg-2-100"></div>
+            <div class="port-block pure-u-1 pure-u-lg-99-100">
+                <div class="port-content" id="port4">
+                    <div class="filter">
+                        <div class="port-text">
+                            <p>Nomiku</p>
+                        </div>
+                    </div>
+                    <div class="port-video-container">
+                        <video class="background-video" preload="auto" autoplay loop muted>
+                            <!-- <source src="assets/videos/portfolio/DTSF_2.webm" type="video/webm"> -->
+                            <source src="assets/videos/portfolio/artichoke.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ROW 3 -->
+        <div class="pure-g">
+            <div class="port-block pure-u-1 pure-u-lg-99-100">
+                <div class="port-content" id="port5">
+                    <div class="filter">
+                        <div class="port-text">
+                            <p>Olio Devices</p>
+                        </div>
+                    </div>
+                    <div class="port-video-container">
+                        <video class="background-video" preload="auto" autoplay loop muted>
+                            <source src="assets/videos/portfolio/DTSF_2.webm" type="video/webm">
+                            <source src="assets/videos/portfolio/DTSF_2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="pure-u-lg-2-100"></div>
+            <div class="port-block pure-u-1 pure-u-lg-99-100">
+                <div class="port-content" id="port6">
+                    <div class="filter">
+                        <div class="port-text">
+                            <p>Petit Collage</p>
+                        </div>
+                    </div>
+                    <div class="port-video-container">
+                        <video class="background-video" preload="auto" autoplay loop muted>
+                            <!-- <source src="assets/videos/portfolio/paper_dolls.webm" type="video/webm"> -->
+                            <source src="assets/videos/portfolio/paper_dolls.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--<section class="brands">
+        <div class="container">
+            <div class="pure-g">
+                <div class="pure-u-4-24">
+                </div>
+                <div class="brand-message-holder pure-u-16-24">
+                    <h3 id="message-1" class="brand-message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac efficitur sapien. Vestibulum ornare bibendum augue, eget dictum ligula pharetra vitae.</h3>
+                    <h3 id="message-2" class="brand-message">Integer nulla augue, semper a diam at, finibus vehicula orci. Mauris at tristique turpis, id consequat eros. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</h3>
+                    <h3 id="message-3" class="brand-message">Suspendisse porttitor, elit id mollis vestibulum, lectus nulla auctor eros, vitae aliquet lacus tellus sed orci. Maecenas mollis, nunc quis auctor dapibus, dui risus tempus leo, sit amet finibus nunc nisl at neque.</h3>
+                    <h3 id="message-4" class="brand-message">Ut vestibulum scelerisque arcu, at consequat orci ullamcorper id. Donec vehicula ex orci, nec efficitur tellus placerat volutpat. Aliquam dignissim ultrices facilisis. Quisque placerat nulla pretium, bibendum augue quis, luctus risus.</h3>
+                </div>
+            </div>
+            <div class="pure-g">
+                <div class="pure-u-6-24">
+                </div>
+                <div class="brand-logo pure-u-3-24 active-brand" id="logo-reviver" data-number="1" onmouseenter="selectBrandMessage(this)">
+                </div>
+                <div class="brand-logo pure-u-3-24" id="logo-breathometer" data-number="2" onmouseenter="selectBrandMessage(this)">
+                </div>
+                <div class="brand-logo pure-u-3-24" id="logo-skully" data-number="3" onmouseenter="selectBrandMessage(this)">
+                </div>
+                <div class="brand-logo pure-u-3-24" id="brand-logo-4" data-number="4" onmouseenter="selectBrandMessage(this)">
+                    <img src="assets/img/epic-logo.png">
+                </div>
+            </div>
+    </section>-->
+    <!-- <section class="statement">
+        <div class="container">
+            <h2>We are a creative collective to help you tell your story.</h2>
+        </div>
+    </section> -->
+    <section class="services">
+        <div class="container">
+            <h1 class="services-title">Services</h1>
+            <div class="pure-g service-lists">
+                <div class="pure-u-1-3 column">
+                    <div class="list">
+                        <h2>Generate</h2>
+                        <p>Editorial</p>
+                        <p>Script &amp; Copy Writing</p>
+                        <p>Photography/Videography</p>
+                        <p>Animation</p>
+                    </div>
+                </div>
+                <div class="pure-u-1-3 column">
+                    <div class="list">
+                        <h2>Activate</h2>
+                        <p>Web Development</p>
+                        <p>Brand Strategy</p>
+                        <p>Art Direction</p>
+                    </div>
+                </div>
+                <div class="pure-u-1-3 column">
+                    <div class="list">
+                        <h2>Validate</h2>
+                        <p>Data</p>
+                        <p>ROI</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact-cta">
+        <div class="container">
+            <a class="btn" href="contact.html">Get in Touch</a>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-bar pure-g">
+                    <div class="pure-u-1-3">
+                    </div>
+                    <div class="pure-u-1-3">
+                        <div class="pure-g">
+                            <div class="pure-u-1-5 pure-u-lg-9-24">
+                            </div>
+                            <div class="pure-u-1-5 pure-u-lg-2-24 social">
+                                <img src="assets/img/facebook.png">
+                            </div>
+                            <div class="pure-u-1-5 pure-u-lg-2-24 social">
+                                <img src="assets/img/instagram.png">
+                            </div>
+                            <div class="pure-u-1-5 pure-u-lg-2-24 social">
+                                <img src="assets/img/linkedin.png">
+                            </div>
+                            <div class="pure-u-1-5 pure-u-lg-9-24">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pure-u-1-3">
+                    </div>
+                </div>
+                <div class="social-bar pure-g">
+                    <div class="pure-u-1-3">
+                    </div>
+                    <div class="pure-u-1-3">
+                        <p>&copy; Forecast Studios 2017</p>
+                    </div>
+                    <div class="pure-u-1-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="assets/script.js"></script>
+    <script type="text/javascript">
+    // function onVisibilityChange(el, callback) {
+    //     var old_visible;
+    //     return function() {
+    //         var visible = isElementInViewport(el);
+    //         if (visible != old_visible) {
+    //             old_visible = visible;
+    //             if (typeof callback == 'function') {
+    //                 callback(visible);
+    //             }
+    //         }
+    //     }
+    // }
+
+    // var handler = onVisibilityChange($("#reel"), function(visible) {
+    //     var reel = $("#reel")[0];
+    //     console.log(visible);
+    //     if (visible)
+    //         reel.play();
+    //     else
+    //         reel.pause();
+    // });
+
+
+    // //jQuery
+    // $(window).on('DOMContentLoaded load resize scroll', handler);
+    </script>
 </body>
 
 </html>

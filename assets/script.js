@@ -1,52 +1,121 @@
-$(function() {
-    calculateTimeLeft();
+$(document).ready(function() {
 
-    function calculateTimeLeft() {
-        var days = 24 * 60 * 60,
-            hours = 60 * 60,
-            minutes = 60;
+    // Resive video
+    scaleVideoContainer();
 
-        var EndDate = new Date(2017, 2, 25);
-        var StartDate = new Date();
-        // console.log(StartDate);
-        // console.log(EndDate);
+    initBannerVideoSize('.video-container video');
 
-        var timeBetweenS = (EndDate.getTime() - StartDate.getTime()) / 1000;
-        // console.log(timeBetweenS);
+    $(window).on('resize', function() {
+        scaleVideoContainer();
+        scaleBannerVideoSize('.video-container video');
+    });
 
-        // How many days left
-        var timeBetweenDays = Math.floor(timeBetweenS / (days));
-        // How much time after we subtract the days
-        var leftOver = timeBetweenS % days;
-        // How many hours left after days
-        var timeBetweenHours = Math.floor(leftOver / (hours));
-        // How much time after we subtract the hours
-        leftOver = leftOver % hours
+    $(".reel .header-text").on('click', function() {
+        if ($("#reel").prop('muted')) {
+            $("#reel").prop('muted', false);
+            $("#speaker").prop("src", "assets/img/speaker-on.svg");
+        } else {
+            $("#reel").prop('muted', true)
+            $("#speaker").prop("src", "assets/img/speaker-off.svg");
+        }
+    })
 
-        var timeBetweenMinutes = Math.floor(leftOver / (minutes));
-        leftOver = leftOver % minutes
-        var timeBetweenSeconds = Math.floor(leftOver);
+});
 
+/** Reusable Functions **/
+/********************************************************************/
+function scaleVideoContainer() {
 
-        // console.log(timeBetweenDays);
-        // // console.log(leftOver);
-        // console.log(timeBetweenHours);
-        // console.log(timeBetweenMinutes);
-        // console.log(timeBetweenSeconds);
+    var height = $(window).height();
+    var unitHeight = parseInt(height) + 'px';
+    $('.video-background').css('height', unitHeight);
 
-        var timeLeft = {
-            days: timeBetweenDays,
-            hours: timeBetweenHours,
-            minutes: timeBetweenMinutes,
-            seconds: timeBetweenSeconds
+}
+
+function initBannerVideoSize(element) {
+
+    $(element).each(function() {
+        $(this).data('height', $(this).height());
+        $(this).data('width', $(this).width());
+    });
+
+    scaleBannerVideoSize(element);
+
+}
+
+function scaleBannerVideoSize(element) {
+
+    var windowWidth = $(window).width(),
+        windowHeight = $(window).height(),
+        videoWidth,
+        videoHeight;
+
+    $(element).each(function() {
+        var videoAspectRatio = $(this).data('height') / $(this).data('width'),
+            windowAspectRatio = windowHeight / windowWidth;
+
+        if (videoAspectRatio > windowAspectRatio) {
+            videoWidth = windowWidth;
+            videoHeight = videoWidth * videoAspectRatio;
+            console.log(windowWidth);
+            console.log(videoWidth);
+            $(this).css({
+                'top': -(videoHeight - windowHeight) / 2 + 'px',
+                'margin-left': 0
+            });
+        } else {
+            videoHeight = windowHeight;
+            videoWidth = videoHeight / videoAspectRatio;
+            $(this).css({
+                'margin-top': 0,
+                'margin-left': -(videoWidth - windowWidth) / 2 + 'px'
+            });
         }
 
-        $(".days .timer").html(timeLeft.days);
-        $(".hours .timer").html(timeLeft.hours);
-        $(".minutes .timer").html(timeLeft.minutes);
-        $(".seconds .timer").html(timeLeft.seconds);
+        $(this).width(videoWidth).height(videoHeight);
 
-        setTimeout(calculateTimeLeft, 1000);
+        $('.video-container video').addClass('fadeIn animated');
+
+
+    });
+}
+
+// Brand quote stuff
+
+var brandMessage = $(".brands .brand-message")
+
+function selectBrandMessage(elem) {
+    var number = $(elem).data("number")
+
+    $(".brands .brand-logo").removeClass("active-brand")
+    $(".brands .brand-message").css("display", "none");
+    $(".brands #message-" + number).css("display", "inline-block");
+    $(elem).addClass("active-brand")
+}
+
+
+function isElementInViewport (el) {
+
+    //special bonus for those using jQuery
+    if (typeof jQuery === "function" && el instanceof jQuery) {
+        el = el[0];
     }
 
-})
+    var rect = el.getBoundingClientRect();
+
+    return (
+        rect.top >= -400 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight + 400 || document.documentElement.clientHeight + 400) && /*or $(window).height() */
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
+    );
+}
+
+function openNav() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "nav") {
+        x.className += " responsive";
+    } else {
+        x.className = "nav";
+    }
+}
