@@ -20,6 +20,12 @@ $(document).ready(function() {
         }
     })
 
+    $('.portfolio video').on('mouseenter', function(){
+        this.play();
+    }).on('mouseleave', function(){
+        this.pause();
+    });
+
 });
 
 /** Reusable Functions **/
@@ -57,8 +63,8 @@ function scaleBannerVideoSize(element) {
         if (videoAspectRatio > windowAspectRatio) {
             videoWidth = windowWidth;
             videoHeight = videoWidth * videoAspectRatio;
-            console.log(windowWidth);
-            console.log(videoWidth);
+            // console.log(windowWidth);
+            // console.log(videoWidth);
             $(this).css({
                 'top': -(videoHeight - windowHeight) / 2 + 'px',
                 'margin-left': 0
