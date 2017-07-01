@@ -5,6 +5,7 @@
     <title>Forecast Studios</title>
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.7.4/tachyons.min.css">
     <link rel="stylesheet" href="assets/custom.css">
 </head>
 
@@ -21,7 +22,7 @@
                     </div>
                 </div> -->
                 <ul class="links">
-                    <li class="navlink"><a href="work.html">Work</a></li>
+                    <li class="navlink"><a href="#work">Work</a></li>
                     <li class="navlink"><a href="about.html">About</a></li>
                     <li class="navlink"><a href="contact.html">Contact</a></li>
                     <li><a href="javascript:void(0);" class="icon" onclick="openNav()">&#9776;</a></li>
@@ -58,7 +59,7 @@
             </div>
         </div>
     </section>
-    <section class="portfolio">
+    <section class="portfolio" id="work">
         <!-- ROW 1 -->
         <div class="pure-g">
             <div class="port-block pure-u-1 pure-u-lg-99-100">
@@ -69,7 +70,7 @@
                         </div>
                     </div>
                     <div class="port-video-container">
-                        <video class="background-video" preload="auto"  muted>
+                        <video class="background-video" preload="auto" loop muted  data-link="/projects/reviver.html">
                             <!-- <source src="assets/videos/portfolio/reviver.webm" type="video/webm"> -->
                             <source src="assets/videos/portfolio/reviver.mp4" type="video/mp4">
                         </video>
@@ -84,7 +85,7 @@
                         </div>
                     </div>
                     <div class="port-video-container">
-                        <video class="background-video" preload="auto"  muted>
+                        <video class="background-video" preload="auto" loop muted>
                             <!-- <source src="assets/videos/portfolio/explosive.webm" type="video/webm"> -->
                             <source src="assets/videos/portfolio/explosive.mp4" type="video/mp4">
                         </video>
@@ -102,7 +103,7 @@
                         </div>
                     </div>
                     <div class="port-video-container">
-                        <video class="background-video" preload="auto"  muted>
+                        <video class="background-video" preload="auto" loop muted>
                             <!-- <source src="assets/videos/portfolio/mint.webm" type="video/webm"> -->
                             <source src="assets/videos/portfolio/mint.mp4" type="video/mp4">
                         </video>
@@ -117,7 +118,7 @@
                         </div>
                     </div>
                     <div class="port-video-container">
-                        <video class="background-video" preload="auto"  muted>
+                        <video class="background-video" preload="auto" loop muted>
                             <source src="assets/videos/portfolio/artichoke.webm" type="video/webm">
                             <source src="assets/videos/portfolio/artichoke.mp4" type="video/mp4">
                         </video>
@@ -135,7 +136,7 @@
                         </div>
                     </div>
                     <div class="port-video-container">
-                        <video class="background-video" preload="auto"  muted>
+                        <video class="background-video" preload="auto"  muted loop>
                             <source src="assets/videos/portfolio/DTSF_2.webm" type="video/webm">
                             <source src="assets/videos/portfolio/DTSF_2.mp4" type="video/mp4">
                         </video>
@@ -150,7 +151,7 @@
                         </div>
                     </div>
                     <div class="port-video-container">
-                        <video class="background-video" preload="auto" muted>
+                        <video class="background-video" preload="auto" muted loop>
                             <!-- <source src="assets/videos/portfolio/paper_dolls.webm" type="video/webm"> -->
                             <source src="assets/videos/portfolio/paper_dolls.mp4" type="video/mp4">
                         </video>
@@ -193,37 +194,46 @@
     <section class="services">
         <div class="container">
             <h1 class="services-title">Services</h1>
-            <div class="pure-g service-lists">
-                <div class="pure-u-1-3 column">
-                    <div class="list">
-                        <h2>Generate</h2>
-                        <p>Editorial</p>
-                        <p>Script &amp; Copy Writing</p>
-                        <p>Photography/Videography</p>
-                        <p>Animation</p>
-                    </div>
-                </div>
-                <div class="pure-u-1-3 column">
-                    <div class="list">
-                        <h2>Activate</h2>
-                        <p>Web Development</p>
-                        <p>Brand Strategy</p>
-                        <p>Art Direction</p>
-                    </div>
-                </div>
-                <div class="pure-u-1-3 column">
-                    <div class="list">
-                        <h2>Validate</h2>
-                        <p>Data</p>
-                        <p>ROI</p>
-                    </div>
-                </div>
+            <p class="measure lh-copy fw1">
+                We&#700;re a full stack advertising, marketing, and growth agency to help you tell your brand&#700;s narrative to your audience. Our team&#700;s expertise ranges from message ideation, branding, content strategy, to execution in video production, web development, performance marketing, and analytics. Whether you are in the early stages of finding the message that sticks or ready to hit the ground running with either content production or scaling your campaigns, we&#700;re here to help.
+            </p>
+
+            <div class="dt-ns dt--fixed">
+              <div class="dtc-ns pv4">
+                <h2>Generate</h2>
+                <p class="mr2">
+                    We have on staff a team of kick ass writers and strategists who have worked closely with some of the biggest brands in conceptualizing messaging and validating audiences. Our skills aren&#700;t limited to just words—our art directors and animators bring their visual storytelling expertise to make sure your story gets told with full impact.
+                </p>
+                <p>&bull; Editorial</p>
+                <p>&bull; Script &amp; Copy Writing</p>
+                <p>&bull; Photography/Videography</p>
+                <p>&bull; Animation</p>
+              </div>
+              <div class="dtc-ns pv4">
+                <h2>Activate</h2>
+                <p class="mr2">
+                    We&#700;re happy to serve you with our collective experiences executing on raising awareness through traditional and digital native campaigns. From building web experiences to identifying opportunities for tangential content merchandising, our collaborative team will ensure that your narrative doesn&#700;t fall short when you go to market.
+                </p>
+                <p>&bull; Web Development</p>
+                <p>&bull; Brand Strategy</p>
+                <p>&bull; Art Direction</p>
+              </div>
+              <div class="dtc-ns pv4">
+                <h2>Validate</h2>
+                <p class="mr2">
+                    A wise man once said &#147;half the money I spend on advertising is wasted; the trouble is I don&#700;t know which half.&#750; Fortunately, technology now affords us the ability to not only measure our campaign performance, but also predict which channels perform the best. Our team of digital marketers use the newest technologies to measure your campaigns and will guarantee your goals are being met.
+                </p>
+                <p>&bull; Data &amp; Analytics</p>
+                <p>&bull; Goal Setting</p>
+                <p>&bull; Performance Monitoring</p>
+                <p>&bull; ROI Tracking</p>
+              </div>
             </div>
         </div>
     </section>
     <section class="contact-cta">
         <div class="container">
-            <a class="btn" href="contact.html">Get in Touch</a>
+            <a class="btn" href="contact.html">Let&#700;s Tell Your Story</a>
         </div>
     </section>
     <section class="footer">
