@@ -21,9 +21,24 @@ $(document).ready(function() {
     })
 
     $('.portfolio video').on('mouseenter', function(){
-        this.play();
+        console.log(this);
+        var video = this;
+        var isPlaying = video.currentTime > 0 && !video.paused && !video.ended
+            && video.readyState > 2;
+
+        if (!isPlaying) {
+          video.play();
+        }
     }).on('mouseleave', function(){
-        this.pause();
+        console.log(this);
+        var video = this;
+        var isPlaying = video.currentTime > 0 && !video.paused && !video.ended
+            && video.readyState > 2;
+
+        if (isPlaying) {
+          video.pause();
+        }
+        // this.pause();
     });
 
 });
