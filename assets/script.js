@@ -20,21 +20,31 @@ $(document).ready(function() {
         }
     })
 
-    $('.port-video-container > video').on('mouseenter', function(){
-        var video = this;
-        var isPlaying = video.currentTime > 0 && !video.paused && !video.ended
-            && video.readyState > 2;
+    $('.port-video-container > video').on({
+        mouseenter: function() {
+            // remove grayscale
+            $(this).css("filter", "grayscale(0%)");
+            var video = this;
+            var isPlaying = video.currentTime > 0 && !video.paused && !video.ended
+                && video.readyState > 2;
 
-        if (!isPlaying) {
-          video.play();
-        }
-    }).on('mouseleave', function(){
-        var video = this;
-        var isPlaying = video.currentTime > 0 && !video.paused && !video.ended
-            && video.readyState > 2;
+            if (!isPlaying) {
+              video.play();
+            }
+        },
+        mouseleave: function() {
+            // add grayscale
+            $(this).css("filter", "grayscale(100%)");
+            var video = this;
+            var isPlaying = video.currentTime > 0 && !video.paused && !video.ended
+                && video.readyState > 2;
 
-        if (isPlaying) {
-          video.pause();
+            if (isPlaying) {
+              video.pause();
+            }
+        },
+        click: function() {
+            if ($(this).data("link")) window.location.href = window.location.host + $(this).data("link");
         }
     });
 
