@@ -20,8 +20,7 @@ $(document).ready(function() {
         }
     })
 
-    $('.portfolio video').on('mouseenter', function(){
-        console.log(this);
+    $('.port-video-container > video').on('mouseenter', function(){
         var video = this;
         var isPlaying = video.currentTime > 0 && !video.paused && !video.ended
             && video.readyState > 2;
@@ -30,7 +29,6 @@ $(document).ready(function() {
           video.play();
         }
     }).on('mouseleave', function(){
-        console.log(this);
         var video = this;
         var isPlaying = video.currentTime > 0 && !video.paused && !video.ended
             && video.readyState > 2;
@@ -38,7 +36,6 @@ $(document).ready(function() {
         if (isPlaying) {
           video.pause();
         }
-        // this.pause();
     });
 
 });
