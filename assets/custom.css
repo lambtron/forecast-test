@@ -632,7 +632,7 @@ video {
 
 .contact-section {
     height: 100vh;
-    background-image: url("img/contact-bg.jpg");
+    background-image: url("img/contact-bg.png");
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -643,7 +643,7 @@ video {
 }
 
 .contact-section .form {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, #FFFFFF 20%);
+    /*background: linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, #FFFFFF 20%);*/
 }
 
 .contact-section .form .contact-title-holder {
@@ -669,6 +669,7 @@ video {
 
 .contact-section .form label {
     margin-left: 10%;
+    margin-top: 30px;
 }
 
 .contact-section .form textarea {
@@ -676,6 +677,7 @@ video {
 }
 
 .contact-section .form #send-button {
-    background-color: #000;
+    margin-top: 30px;
+    background-color: #daa520;
     color: #fff;
 }
