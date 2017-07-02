@@ -634,7 +634,7 @@ video {
 
 .contact-section {
     height: 100vh;
-    background-image: url("img/contact-background.jpg");
+    background-image: url("img/contact-bg.jpg");
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -645,8 +645,6 @@ video {
 }
 
 .contact-section .form {
-    padding: 30vh 0;
-    background-color: red;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, #FFFFFF 20%);
 }
 
