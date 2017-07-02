@@ -25,14 +25,14 @@ $(document).ready(function() {
             // remove grayscale
             $(this).css("filter", "grayscale(0%)");
             if (!isPlaying(this)) {
-              video.play();
+              this.play();
             }
         },
         mouseleave: function() {
             // add grayscale
             $(this).css("filter", "grayscale(100%)");
             if (isPlaying(this)) {
-              video.pause();
+              this.pause();
             }
         },
         click: function() {
@@ -43,13 +43,13 @@ $(document).ready(function() {
     $('.filter > .port-text').on({
         mouseenter: function() {
             // go up to .port-content, find
-            var video = $(this).closest('.port-content').find('video');
+            var video = $(this).closest('.port-content').find('video')[0];
             if (!isPlaying(video)) {
               video.play();
             }
         },
         mouseleave: function() {
-            var video = $(this).closest('.port-content').find('video');
+            var video = $(this).closest('.port-content').find('video')[0];
             if (isPlaying(video)) {
               video.pause();
             }
