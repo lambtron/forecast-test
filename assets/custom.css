@@ -329,21 +329,20 @@ video {
     cursor: pointer;
 }
 
-/*.portfolio .port-block .port-content:hover .filter {
+.portfolio .port-block .port-content:hover .filter {
     display: inline-block;
     cursor: pointer;
-}*/
+}
 
 .portfolio .port-block .port-content .filter {
     display: none;
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
+    height: 20%;
     width: 100%;
     background-color: rgba(255, 255, 255, .6);
     z-index: 10;
-    /*padding-top: 5%;*/
 }
 
 .portfolio .port-block .port-content .filter .port-text {
@@ -352,7 +351,6 @@ video {
     left: 20%;
     top: 20%;
     height: 80%;
-    /*background: red;*/
 }
 
 .pure-u-lg-2-100 {
