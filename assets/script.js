@@ -24,34 +24,46 @@ $(document).ready(function() {
         mouseenter: function() {
             // remove grayscale
             $(this).css("filter", "grayscale(0%)");
-            var video = this;
-            var isPlaying = video.currentTime > 0 && !video.paused && !video.ended
-                && video.readyState > 2;
-
-            if (!isPlaying) {
+            if (!isPlaying(this)) {
               video.play();
             }
         },
         mouseleave: function() {
             // add grayscale
             $(this).css("filter", "grayscale(100%)");
-            var video = this;
-            var isPlaying = video.currentTime > 0 && !video.paused && !video.ended
-                && video.readyState > 2;
-
-            if (isPlaying) {
+            if (isPlaying(this)) {
               video.pause();
             }
         },
         click: function() {
-            if ($(this).data("link")) window.location.href = window.location.host + $(this).data("link");
+            if ($(this).data("link")) window.location.href = window.location.href + $(this).data("link");
         }
     });
 
+    $('.filter > .port-text').on({
+        mouseenter: function() {
+            // go up to .port-content, find
+            var video = $(this).closest('.port-content').find('video');
+            if (!isPlaying(video)) {
+              video.play();
+            }
+        },
+        mouseleave: function() {
+            var video = $(this).closest('.port-content').find('video');
+            if (isPlaying(video)) {
+              video.pause();
+            }
+        }
+    });
 });
 
 /** Reusable Functions **/
 /********************************************************************/
+function isPlaying(video) {
+    return video.currentTime > 0 && !video.paused && !video.ended && video.readyState > 2;
+}
+
+
 function scaleVideoContainer() {
 
     var height = $(window).height();
