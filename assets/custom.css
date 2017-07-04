@@ -233,7 +233,7 @@ video {
 
 .reel .header-text {
     color: white;
-    bottom: 30px;
+    bottom: 120px;
     left: 30px;
     top: initial;
     /*right: 0;*/
@@ -502,13 +502,13 @@ video {
 /******************************* HEADER ***************************************************/
 
 .about-header {
-    height: 100vh;
+    margin-top: 60px;
+    height: calc(100vh - 60px);
 }
 
 .about-header .header-text {
     position: absolute;
     bottom: 30px;
-    width: 60%;
 }
 
 .header-text h1 {
@@ -638,7 +638,6 @@ video {
 /************************************ CONTACT SECTION ***********************************/
 
 .contact-section {
-    height: 100vh;
     background-image: url("img/contact-bg.png");
     background-position: 50% 50%;
     background-size: cover;
