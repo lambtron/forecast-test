@@ -243,6 +243,12 @@ video {
     /*background: url("img/speaker-off.svg");*/
 }
 
+.header-text img {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
 .reel .header-text:hover {
     cursor: pointer;
 }
@@ -439,7 +445,7 @@ video {
 /********************************* CONTACT CTA ****************************************/
 
 .contact-cta {
-    height: 100px;
+    height: 200px;
     text-align: center;
     padding-top: 50px;
 }
@@ -680,4 +686,9 @@ video {
     margin-top: 30px;
     background-color: #daa520;
     color: #fff;
+}
+
+.cta-gold {
+    color: #fff;
+    background-color: #daa520;
 }
