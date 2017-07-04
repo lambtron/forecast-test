@@ -36,7 +36,7 @@ $(document).ready(function() {
             }
         },
         click: function() {
-            if ($(this).data("link")) window.location.href = window.location.href + $(this).data("link");
+            if ($(this).data("link")) window.location.href = window.location.host + window.location.pathname + $(this).data("link");
         }
     });
 
