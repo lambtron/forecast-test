@@ -56,6 +56,13 @@ $(document).ready(function() {
             }
         }
     });
+
+    if ($(document).width() >= 1024) $('.port-block').height((($(document).width()) - 1024) / 3.43 + 280);
+    if ($(document).width() < 1024) $('.port-block').height($(document).width() / 1.8);
+    $(window).resize(function() {
+        if ($(document).width() >= 1024) $('.port-block').height((($(document).width()) - 1024) / 3.43 + 280);
+        if ($(document).width() < 1024) $('.port-block').height($(document).width() / 1.8);
+    });
 });
 
 /** Reusable Functions **/
