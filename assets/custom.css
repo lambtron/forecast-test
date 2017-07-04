@@ -77,7 +77,7 @@ section {
     height: 60px;
     width: 100%;
     /*background-color: rgba(255,255,255, .2);*/
-    background-color: #000;
+    /*background-color: #333;*/
     color: white;
 }
 
@@ -228,7 +228,7 @@ video {
 /******************************************** REEL *****************************************/
 
 .reel {
-    background: #000;
+    /*background: #333;*/
 }
 
 .reel .header-text {
@@ -377,10 +377,10 @@ video {
 
 /************************************* BRAND LOGOS ***********************************/
 
-.brands {
+/*.brands {
     color: white;
     background-color: #aaa;
-}
+}*/
 
 .brands .brand-logo {
     opacity: .5;
