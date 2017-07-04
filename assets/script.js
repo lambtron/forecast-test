@@ -36,7 +36,7 @@ $(document).ready(function() {
             }
         },
         click: function() {
-            if ($(this).data("link")) window.location.href = 'https://lambtron.github.io/forecast-test/projects/reviver.html';
+            if ($(this).data("link")) window.location.href = 'https://lambtron.github.io/forecast-test' + $(this).data("link");
         }
     });
 
